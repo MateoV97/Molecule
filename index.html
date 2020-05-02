@@ -9,6 +9,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 
@@ -30,7 +38,7 @@ $(document).ready(function() {
 				var Updateurl = url + mode + pdb + background + chainType + chainColor;
 				
 				var parent = $('embed#bgs').parent();
-				var newUrl = "<embed id=\"bgs\" src=\"" + Updateurl+ "\" width=\"700\" height=\"700\" />";
+				var newUrl = "<embed id=\"bgs\" src=\"" + Updateurl+ "\" width=\"1200\" height=\"500\" />";
 				var newElement = $(newUrl);
 				
 				$('embed#bgs').remove();
@@ -41,56 +49,98 @@ $(document).ready(function() {
   });
 </script>
 
-
-
-  <label class="container">White
-  <input type="radio"  id="white" name="bg" checked="checked" value="&bg=white">
-  <span class="checkmark"></span>
-</label>
+<div class="flex_container">
+  <div class="current_items">
+    <div class="current_items__row">
+      <p> Background </p>
+      <div class="wrapper_input">
+        <input type="radio" name="bg" id="radio1" value ="&bg=white" checked="checked">
+        <label for="radio1">White</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="bg"  value ="&bg=gray" id="radio2">
+        <label for="radio2">Gray</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="bg" value ="&bg=black" id="radio3">
+        <label for="radio3">Black</label>
+      </div>
+    </div>
+    <div class="current_items__row">
+      <p> Representation </p>
+      <div class="wrapper_input">
+        <input type="radio" name="mode" value ="balls" checked="checked" id="radio4" >
+        <label for="radio4">Ball and Stick</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="mode" value ="stick" id="radio5">
+        <label for="radio5">Stick</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="mode" value ="vdw" id="radio6">
+        <label for="radio6">van deer wall spheres</label>
+      </div>
+       <div class="wrapper_input">
+        <input type="radio" name="mode" value ="wireframe" id="radio7">
+        <label for="radio7">Wireframe</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="mode" value ="line" id="radio8">
+        <label for="radio8">Line</label>
+      </div>
+    </div>
+    <div class="current_items__row">
+      <div class="wrapper_input">
+        <p>Chain Representation with Bonds</p>
+        <input type="radio" name="chainType" value="&chainType=ribbon&chainBonds=true" checked="checked" id="radio9">
+        <label for="radio9">Ribbon</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainType" value="&chainType=cylinders&chainBonds=true" id="radio10">
+        <label for="radio10">Cylinder and Plate</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainType" value="&chainType=btube&chainBonds=true" id="radio11">
+        <label for="radio11">B-factor Tube</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainType" value="&chainType=ctrace&chainBonds=true" id="radio12">
+        <label for="radio12">C-alpha trace</label>
+      </div>
+    </div>
+    <div class="current_items__row">
+      <div class="wrapper_input">
+        <p> Chain Color Scheme </p>
+        <input type="radio" name="chainColor" value="&chainColor=ss" checked="checked" id="radio13">
+        <label for="radio13">Secondary Strucuture</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainColor" value="&chainColor=spectrum" id="radio14">
+        <label for="radio14">Spectrum</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainColor" value="&chainColor=chain" id="radio15">
+        <label for="radio15">Chain</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainColor" value="&chainColor=residue" id="radio16">
+        <label for="radio16">Residue</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainColor" value="&chainColor=polarity" id="radio16">
+        <label for="radio16">Polarity</label>
+      </div>
+      <div class="wrapper_input">
+        <input type="radio" name="chainColor" value="&chainColor=bfactor" id="radio16">
+        <label for="radio16">B-Factor</label>
+      </div>
+    </div>
+  </div>
   
-  <label class="container">Gray
-  <input type="radio"  id="gray" name="bg" value="&bg=gray">
-   <span class="checkmark"></span>
-</label>
-
-<label class="container">Black
-  <input type="radio" id="black" name="bg" value="&bg=black">
-  <span class="checkmark"></span>
-</label>
-
-  
-  
-  
-<label class="container">Wireframe
-   <input type="radio" id="wireframe" name="mode" checked="checked" value="wireframe">
-    <span class="checkmark2"></span>
-</label>
-
-  
-  <input type="radio" id="line" name="mode" value="line">
-  <label for="line">Line</label>
-  
-  
-  
-  
-  
-  <input type="radio" id="cylinders" name="chainType" checked="checked" value="&chainType=cylinders">
-  <label for="cylinders">Cylinder and Plate</label>
-  
-  
-  
-  
-  
-  
-  <input type="radio" id="polarity" name="chainColor" checked="checked" value="&chainColor=polarity">
-  <label for="polarity">Polarity</label>
-  
-
-<p>Click the button to change the background:</p>
 <p><input id ="change" type="button" value="Reload Molecule with Selected Inputs"></p>
 
-<embed id="bgs" src ="https://embed.molview.org/v1/?mode=line&pdbid=5RE4" width="700" height="700">
-
+<embed id="bgs" src ="https://embed.molview.org/v1/?mode=line&pdbid=5RE4" width="1200" height="500">
+</div>
 
 
 </body>
